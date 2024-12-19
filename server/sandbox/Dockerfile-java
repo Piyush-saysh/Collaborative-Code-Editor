@@ -1,0 +1,8 @@
+FROM openjdk:latest
+
+WORKDIR /app
+
+RUN useradd -m sandboxuser
+USER sandboxuser
+
+CMD ["sh", "-c", "javac /app/UserCode.java && java -cp /app UserCode"]
